@@ -1,0 +1,159 @@
+@use "./base";
+@use "./components";
+@use "./variables";
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+#app {
+  background: url("../../public/bg-weather.png") center / cover no-repeat;
+  height: 100vh;
+}
+
+.header {
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100px;
+  }
+}
+
+.input {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--color-secondary);
+  padding: 0 0 0.5rem 0;
+  width: 30%;
+  z-index: 1000;
+  &__field {
+    background: none;
+    color: var(--color-primary);
+    border: none;
+    font-size: 1.25rem;
+    outline: none;
+    font-family: inherit;
+    width: 100%;
+    &::placeholder {
+      color: var(--color-secondary);
+    }
+  }
+}
+
+.main {
+  .weather {
+    &__wrapper {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    &__heading {
+      font-size: 8.75rem;
+      font-weight: 400;
+    }
+    &__subheading {
+      font-size: 3.75rem;
+      font-weight: 400;
+    }
+    &__date {
+      font-size: 1.125rem;
+    }
+    &__icon {
+      font-size: 4.75rem;
+    }
+  }
+  .data {
+    margin-bottom: 1rem;
+    &__wrapper {
+      background: rgba(255, 255, 255, 0.12);
+      border-radius: 16px;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(3.3px);
+      -webkit-backdrop-filter: blur(3.3px);
+      border: 1px solid rgba(255, 255, 255, 0.59);
+      padding: 1rem;
+    }
+    &__heading {
+      margin-bottom: 1rem;
+      font-size: 2rem;
+      font-weight: 400;
+    }
+    &__description {
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+      font-size: 1.25rem;
+    }
+
+    &__list {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    &__item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(255, 255, 255, 0.12);
+      border-radius: 16px;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(3.3px);
+      -webkit-backdrop-filter: blur(3.3px);
+      border: 1px solid rgba(255, 255, 255, 0.59);
+      padding: 1rem;
+    }
+    &__label {
+      font-size: 1.25rem;
+    }
+    &__value {
+      font-size: 1.5rem;
+    }
+  }
+  .forecast {
+    &__wrapper {
+      background: rgba(255, 255, 255, 0.12);
+      border-radius: 16px;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(3.3px);
+      -webkit-backdrop-filter: blur(3.3px);
+      border: 1px solid rgba(255, 255, 255, 0.59);
+      padding: 1rem;
+    }
+    &__heading {
+      margin-bottom: 1rem;
+      font-size: 2rem;
+      font-weight: 400;
+    }
+    &__description {
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+      font-size: 1.25rem;
+    }
+    &__list {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    &__item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(255, 255, 255, 0.12);
+      border-radius: 16px;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(3.3px);
+      -webkit-backdrop-filter: blur(3.3px);
+      border: 1px solid rgba(255, 255, 255, 0.59);
+      padding: 1rem;
+      height: 300px;
+    }
+    &__label {
+      font-size: 1.25rem;
+    }
+    &__value {
+      font-size: 1.5rem;
+    }
+    &__icon {
+      font-size: 2rem;
+    }
+  }
+}

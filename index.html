@@ -1,13 +1,207 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>js-weather-app</title>
+    <title>Weather App</title>
+    <script
+      src="https://kit.fontawesome.com/60c94ed1cd.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
-    <div id="app"></div>
+    <div id="app">
+      <header class="header">
+        <div class="header__wrapper container">
+          <img src="./src/assets/logo.svg" alt="Logo" class="header__logo" />
+          <div class="input">
+            <input
+              type="text"
+              placeholder="Search Location"
+              class="input__field"
+            />
+            <button class="btn btn-input">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+          </div>
+        </div>
+      </header>
+      <main class="main">
+        <section class="weather">
+          <div class="weather__wrapper container">
+            <h1 class="weather__heading">16°</h1>
+            <div class="weather__info">
+              <h2 class="weather__subheading">London</h2>
+              <p class="weather__date">06:09 - Monday, 9 Sep '23</p>
+            </div>
+            <p class="weather__icon"><i class="fa-regular fa-cloud"></i></p>
+          </div>
+        </section>
+        <section class="data">
+          <div class="data__wrapper container">
+            <div class="data__row">
+              <p class="data__description">Thunderstorm with light drizzle</p>
+
+              <ul class="data__list">
+                <li class="data__item">
+                  <p class="data__label">Temp Max</p>
+                  <p class="data__value">
+                    19°<i class="fa-solid fa-temperature-full"></i>
+                  </p>
+                </li>
+                <li class="data__item">
+                  <p class="data__label">Temp Min</p>
+                  <p class="data__value">19°</p>
+                </li>
+                <li class="data__item">
+                  <p class="data__label">Humidity</p>
+                  <p class="data__value">19°</p>
+                </li>
+                <li class="data__item">
+                  <p class="data__label">Cloudy</p>
+                  <p class="data__value">19°</p>
+                </li>
+                <li class="data__item">
+                  <p class="data__label">Wind</p>
+                  <p class="data__value">19°</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        <section class="forecast">
+          <div class="forecast__wrapper container">
+            <div class="forecast__row">
+              <p class="forecast__description">Today’s Weather Forecast...</p>
+
+              <ul class="forecast__list">
+                <li class="forecast__item">
+                  <p class="forecast__icon">
+                    <i class="fa-regular fa-snowflake"></i>
+                  </p>
+                  <p class="forecast__label">
+                    09:00 <br />
+                    Snow
+                  </p>
+                  <p class="forecast__value">19°</p>
+                </li>
+                <li class="forecast__item">
+                  <p class="forecast__icon">
+                    <i class="fa-regular fa-snowflake"></i>
+                  </p>
+                  <p class="forecast__label">
+                    09:00 <br />
+                    Snow
+                  </p>
+                  <p class="forecast__value">19°</p>
+                </li>
+                <li class="forecast__item">
+                  <p class="forecast__icon">
+                    <i class="fa-regular fa-snowflake"></i>
+                  </p>
+                  <p class="forecast__label">
+                    09:00 <br />
+                    Snow
+                  </p>
+                  <p class="forecast__value">19°</p>
+                </li>
+                <li class="forecast__item">
+                  <p class="forecast__icon">
+                    <i class="fa-regular fa-snowflake"></i>
+                  </p>
+                  <p class="forecast__label">
+                    09:00 <br />
+                    Snow
+                  </p>
+                  <p class="forecast__value">19°</p>
+                </li>
+                <li class="forecast__item">
+                  <p class="forecast__icon">
+                    <i class="fa-regular fa-snowflake"></i>
+                  </p>
+                  <p class="forecast__label">
+                    09:00 <br />
+                    Snow
+                  </p>
+                  <p class="forecast__value">19°</p>
+                </li>
+                <li class="forecast__item">
+                  <p class="forecast__icon">
+                    <i class="fa-regular fa-snowflake"></i>
+                  </p>
+                  <p class="forecast__label">
+                    09:00 <br />
+                    Snow
+                  </p>
+                  <p class="forecast__value">19°</p>
+                </li>
+                <li class="forecast__item">
+                  <p class="forecast__icon">
+                    <i class="fa-regular fa-snowflake"></i>
+                  </p>
+                  <p class="forecast__label">
+                    09:00 <br />
+                    Snow
+                  </p>
+                  <p class="forecast__value">19°</p>
+                </li>
+                <li class="forecast__item">
+                  <p class="forecast__icon">
+                    <i class="fa-regular fa-snowflake"></i>
+                  </p>
+                  <p class="forecast__label">
+                    09:00 <br />
+                    Snow
+                  </p>
+                  <p class="forecast__value">19°</p>
+                </li>
+                <li class="forecast__item">
+                  <p class="forecast__icon">
+                    <i class="fa-regular fa-snowflake"></i>
+                  </p>
+                  <p class="forecast__label">
+                    09:00 <br />
+                    Snow
+                  </p>
+                  <p class="forecast__value">19°</p>
+                </li>
+                <li class="forecast__item">
+                  <p class="forecast__icon">
+                    <i class="fa-regular fa-snowflake"></i>
+                  </p>
+                  <p class="forecast__label">
+                    09:00 <br />
+                    Snow
+                  </p>
+                  <p class="forecast__value">19°</p>
+                </li>
+                <li class="forecast__item">
+                  <p class="forecast__icon">
+                    <i class="fa-regular fa-snowflake"></i>
+                  </p>
+                  <p class="forecast__label">
+                    09:00 <br />
+                    Snow
+                  </p>
+                  <p class="forecast__value">19°</p>
+                </li>
+                <li class="forecast__item">
+                  <p class="forecast__icon">
+                    <i class="fa-regular fa-snowflake"></i>
+                  </p>
+                  <p class="forecast__label">
+                    09:00 <br />
+                    Snow
+                  </p>
+                  <p class="forecast__value">19°</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
