@@ -3,11 +3,6 @@
 @use "./variables";
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 
-#app {
-  background: url("../../public/bg-weather.png") center / cover no-repeat;
-  height: 100vh;
-}
-
 .header {
   &__wrapper {
     display: flex;
@@ -17,143 +12,158 @@
   }
 }
 
-.input {
-  display: flex;
-  align-items: center;
-  border-bottom: 1px solid var(--color-secondary);
-  padding: 0 0 0.5rem 0;
-  width: 30%;
-  z-index: 1000;
-  &__field {
-    background: none;
-    color: var(--color-primary);
-    border: none;
-    font-size: 1.25rem;
-    outline: none;
-    font-family: inherit;
-    width: 100%;
-    &::placeholder {
-      color: var(--color-secondary);
-    }
-  }
-}
-
 .main {
-  .weather {
+  .hero {
+    margin-bottom: 2rem;
     &__wrapper {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
+      text-align: center;
     }
     &__heading {
-      font-size: 8.75rem;
-      font-weight: 400;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      margin-bottom: 2rem;
     }
-    &__subheading {
-      font-size: 3.75rem;
-      font-weight: 400;
-    }
-    &__date {
-      font-size: 1.125rem;
-    }
-    &__icon {
-      font-size: 4.75rem;
+    &__form {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+
+      &-input {
+        background-color: var(--color-bg-300);
+        border: none;
+        outline: none;
+        width: 100%;
+        font-size: 1.25rem;
+        padding: 1rem 3rem;
+        border-radius: 0.75rem;
+        color: var(--color-primary);
+
+        &::placeholder {
+          color: var(--color-secondary);
+        }
+      }
+
+      &-wrapper {
+        display: flex;
+        align-items: center;
+        width: 50%;
+        position: relative;
+
+        & > i {
+          position: absolute;
+          top: 0;
+          left: 0;
+          padding: 1rem;
+          color: var(--color-secondary);
+          font-size: 1.25rem;
+        }
+      }
     }
   }
   .data {
-    margin-bottom: 1rem;
-    &__wrapper {
-      background: rgba(255, 255, 255, 0.12);
-      border-radius: 16px;
-      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-      backdrop-filter: blur(3.3px);
-      -webkit-backdrop-filter: blur(3.3px);
-      border: 1px solid rgba(255, 255, 255, 0.59);
-      padding: 1rem;
-    }
-    &__heading {
+    &__section-heading {
       margin-bottom: 1rem;
-      font-size: 2rem;
-      font-weight: 400;
-    }
-    &__description {
-      text-transform: uppercase;
-      margin-bottom: 1rem;
-      font-size: 1.25rem;
     }
 
-    &__list {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-    &__item {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      background: rgba(255, 255, 255, 0.12);
-      border-radius: 16px;
-      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-      backdrop-filter: blur(3.3px);
-      -webkit-backdrop-filter: blur(3.3px);
-      border: 1px solid rgba(255, 255, 255, 0.59);
-      padding: 1rem;
-    }
-    &__label {
-      font-size: 1.25rem;
-    }
-    &__value {
-      font-size: 1.5rem;
-    }
-  }
-  .forecast {
     &__wrapper {
-      background: rgba(255, 255, 255, 0.12);
-      border-radius: 16px;
-      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-      backdrop-filter: blur(3.3px);
-      -webkit-backdrop-filter: blur(3.3px);
-      border: 1px solid rgba(255, 255, 255, 0.59);
+      display: grid;
+      grid-template-areas:
+        "curr   hourly"
+        "daily  hourly";
+      gap: 1.5rem;
+    }
+
+    /* Current / today block */
+    &__current {
+      grid-area: curr;
+
+      &-card {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 350px;
+        padding: 0 1.5rem;
+        margin-bottom: 1.5rem;
+        border-radius: 1rem;
+        background: url("../../src/assets/bg-today-large.svg") center / cover
+          no-repeat;
+      }
+    }
+
+    /* Daily forecast */
+    &__daily {
+      grid-area: daily;
+
+      &-list {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+      }
+
+      &-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        height: 200px;
+        padding: 1rem;
+        border-radius: 1rem;
+        font-size: 1.25rem;
+        background-color: var(--color-bg-100);
+        text-align: center;
+      }
+    }
+
+    /* Hourly forecast */
+    &__hourly {
+      grid-area: hourly;
       padding: 1rem;
+      border-radius: 1rem;
+      background-color: var(--color-bg-100);
+
+      &-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 1rem;
+      }
+
+      &-list {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      &-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1rem;
+        border-radius: 0.5rem;
+        background-color: var(--color-bg-200);
+      }
     }
-    &__heading {
-      margin-bottom: 1rem;
-      font-size: 2rem;
-      font-weight: 400;
-    }
-    &__description {
-      text-transform: uppercase;
-      margin-bottom: 1rem;
-      font-size: 1.25rem;
-    }
-    &__list {
+
+    /* Stats row under the big card */
+    &__stats {
       display: flex;
-      flex-direction: row;
+      align-items: center;
       justify-content: space-between;
       gap: 1rem;
     }
-    &__item {
+
+    &__stat {
       display: flex;
       flex-direction: column;
-      align-items: center;
       justify-content: space-between;
-      background: rgba(255, 255, 255, 0.12);
-      border-radius: 16px;
-      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-      backdrop-filter: blur(3.3px);
-      -webkit-backdrop-filter: blur(3.3px);
-      border: 1px solid rgba(255, 255, 255, 0.59);
+      min-width: 225px;
+      height: 100px;
       padding: 1rem;
-      height: 300px;
-    }
-    &__label {
+      border-radius: 1rem;
       font-size: 1.25rem;
-    }
-    &__value {
-      font-size: 1.5rem;
-    }
-    &__icon {
-      font-size: 2rem;
+      text-align: start;
+      background-color: var(--color-bg-100);
     }
   }
 }
